@@ -4,6 +4,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
 
+        int n = 0;
         //noinspection InfiniteLoopStatement
         while (true) {
             System.out.println("Введите путь:");
@@ -13,15 +14,19 @@ public class Main {
             boolean fileExist = file.exists();
             boolean isDirectory = file.isDirectory();
 
-            if (fileExist) {
-                System.out.println("Путь указан верно");
+
+
+            if (!fileExist || isDirectory ) {
+                System.out.println("Указанный файл не существует или указанный путь является путём к папке");
                 continue;
             }
             ;
-            if (isDirectory)
-                System.out.println("Указанный путь является путём к папке");
-            else
-                System.out.println("Указанный файл не существует");
+            if (fileExist && !isDirectory) {
+                n++;
+                System.out.println("Путь указан верно");
+                System.out.println("Это файл номер " + n);
+            };
+
 
 
         }
