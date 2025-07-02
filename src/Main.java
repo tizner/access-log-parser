@@ -14,22 +14,15 @@ public class Main {
             boolean fileExist = file.exists();
             boolean isDirectory = file.isDirectory();
 
-
-
             if (!fileExist || isDirectory ) {
                 System.out.println("Указанный файл не существует или указанный путь является путём к папке");
-                continue;
+
             }
-            ;
-            if (fileExist && !isDirectory) {
+            else {
                 n++;
                 System.out.println("Путь указан верно");
                 System.out.println("Это файл номер " + n);
-            };
-
-
-
+            }
         }
-
     };
 };
